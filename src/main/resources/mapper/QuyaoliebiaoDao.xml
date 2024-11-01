@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.QuyaoliebiaoDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.QuyaoliebiaoEntity" id="quyaoliebiaoMap">
+        <result property="huanzhezhanghao" column="huanzhezhanghao"/>
+        <result property="huanzhexingming" column="huanzhexingming"/>
+        <result property="xingbie" column="xingbie"/>
+        <result property="nianling" column="nianling"/>
+        <result property="tupian" column="tupian"/>
+        <result property="zhenduanjieguo" column="zhenduanjieguo"/>
+        <result property="kaiyaoliebiao" column="kaiyaoliebiao"/>
+        <result property="quyaochuangkou" column="quyaochuangkou"/>
+        <result property="quyaozhuangtai" column="quyaozhuangtai"/>
+        <result property="userid" column="userid"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.QuyaoliebiaoVO" >
+		SELECT * FROM quyaoliebiao  quyaoliebiao         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.QuyaoliebiaoVO" >
+		SELECT  quyaoliebiao.* FROM quyaoliebiao  quyaoliebiao 	
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.QuyaoliebiaoView" >
+
+		SELECT  quyaoliebiao.* FROM quyaoliebiao  quyaoliebiao 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.QuyaoliebiaoView" >
+		SELECT * FROM quyaoliebiao  quyaoliebiao <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+</mapper>
